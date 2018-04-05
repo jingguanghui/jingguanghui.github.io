@@ -5,10 +5,10 @@
 # Site
 title: 一个好人
 subtitle:
-description:
+description: 把复杂的事情简单化
 keywords:
-author: John Doe
-language:
+author: 景光辉
+language: zh-Hans
 timezone:
 
 # URL
@@ -78,4 +78,7 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:jingguanghui/jingguanghui.github.io.git
+  branch: master
+  
