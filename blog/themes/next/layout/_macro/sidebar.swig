@@ -123,7 +123,8 @@
             <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
-                {{ theme.links_title }}
+                {{ theme.links_title }}&nbsp;
+                <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
               </div>
               <ul class="links-of-blogroll-list">
                 {% for name, link in theme.links %}
@@ -137,7 +138,7 @@
 		  {% include 'high.swig' %}
 		  
 		  {# 网易云音乐外链 #}
-	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=86 
+	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=66 
 		 src="//music.163.com/outchain/player?type=2&id=477251491&auto=0&height=66"></iframe>
 		 
 		 {% include '../_custom/sidebar.swig' %}
