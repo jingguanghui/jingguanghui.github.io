@@ -1,43 +1,49 @@
 ---
-title: Hello World
+title: Fisrt Blog
 tags:
-  - Testing
-  - Another Tag
-categories: Testing
+  - 随笔
+  - 博客
+categories: 随笔
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+欢迎来到我的个人博客 [一个好人](https://jingguanghui.github.io/)! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说：
+>万事开头难，然后中间难，然后结尾难。
+
+嗯，就是这样，激励着我写下这第一篇博客。
 <!-- more -->
 
-## Quick Start
+## 5W1H分析
 
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
+### why
 
 ``` bash
-$ hexo server
+可能是为了装逼吧，也可能是为了记录些什么，我还分不清楚两者的区别。
 ```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
+### what
 
 ``` bash
-$ hexo generate
+写博客
 ```
 
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
+### where
 
 ``` bash
-$ hexo deploy
+家里or公司
+```
+### when
+
+``` bash
+空闲的时候
 ```
 
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+### who
+
+``` bash
+当然是我了，难道是别人不成
+```
+### how
+``` bash
+用电脑写吧，这个好像还挺难的（认真脸）
+```
+
+最后分享一篇最近在知乎上看到的一篇文章，[人是怎么废掉的？](https://www.zhihu.com/question/43607087/answer/320484467)算是给自己提个醒吧~(≧▽≦)/！。
+
