@@ -745,7 +745,8 @@ var jiathis_config={
             <div class="links-of-blogroll motion-element links-of-blogroll-block">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                友情链接
+                友情链接&nbsp;
+                <i class="fa  fa-fw fa-link"></i>
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -908,10 +909,36 @@ var jiathis_config={
 })()'><i class="fa fa-music"></i> 此处慎点</a>
 		  
 		  
-	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=86 
+	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=66 
 		 src="//music.163.com/outchain/player?type=2&id=477251491&auto=0&height=66"></iframe>
 		 
-		 
+		 ﻿<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("04/05/2018 12:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已存活"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
 
         </div>
       </section>
