@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff4dfe;
+  background: #a80413;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2809,4 +2809,18 @@ embed {
 }
 body {
   background: url("/images/circles-light.png");
+}
+.site-author-image {
+  border-radius: 100%;
+  padding: 2px;
+  border: 2px dashed #fff;
+  animation: cycle 2s 0.5s forwards;
+  transition: border-radius 2s;
+}
+.site-author-name {
+  font-size: 16px;
+}
+.site-title {
+  line-height: 60px;
+  font-size: 30px;
 }
