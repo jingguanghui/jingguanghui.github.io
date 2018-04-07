@@ -89,8 +89,11 @@
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
+              {% include 'high.swig' %}
             </div>
           {% endif %}
+
+
 
           {% if theme.social %}
             <div class="links-of-author motion-element">
@@ -135,7 +138,8 @@
               </ul>
             </div>
           {% endif %}
-		  {% include 'high.swig' %}
+
+		 
 		  
 		  {# 网易云音乐外链 #}
 	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=66 

@@ -1,4 +1,4 @@
-﻿<a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
+﻿<a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake " href='javascript:(function() {
     function c() {
         var e = document.createElement("link");
         e.setAttribute("type", "text/css");
