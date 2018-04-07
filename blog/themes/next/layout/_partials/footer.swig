@@ -49,7 +49,7 @@
 <div class="weixin-box">
   <div class="weixin-menu">
     <div class="weixin-hover">
-      <div class="weixin-description">微信扫一扫，成为我的好友吧</div>
+      <div class="weixin-description">扫一扫，加个微信吧</div>
     </div>
   </div>
 </div>
