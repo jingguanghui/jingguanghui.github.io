@@ -138,12 +138,9 @@
               </ul>
             </div>
           {% endif %}
-
-		 
-		  
 		  {# 网易云音乐外链 #}
 	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=66 
-		 src="//music.163.com/outchain/player?type=2&id=477251491&auto=0&height=66"></iframe>
+		 src="//music.163.com/outchain/player?type=2&id=477251491&auto=0&height=66"></iframe>  
 		 
 		 {% include '../_custom/sidebar.swig' %}
         </div>
