@@ -16,16 +16,20 @@ categories: 随笔
 
 ### why
 <div class="note success"><p>可能是为了装逼吧，也可能是为了记录些什么，我还分不清楚两者的区别。</p></div>
+
 ### what
 <div class="note success">写博客</p></div>
+
 ### where
 <div class="note success">家里or公司</p></div>
+
 ### when
 <div class="note success">空闲的时候</p></div>
+
 ### who
 <div class="note success">当然是我了，难道是别人不成</p></div>
+
 ### how
 <div class="note success">用电脑写吧，这个好像还挺难的（认真脸）</p></div>
 
-最后分享一篇最近在知乎上看到的一篇文章，[人是怎么废掉的？](https://www.zhihu.com/question/43607087/answer/320484467)算是给自己提个醒吧~(≧▽≦)/！。
-
+最后分享一篇最近在知乎上看到的一篇文章，[人是怎么废掉的？](https://www.zhihu.com/question/43607087/answer/320484467)算是给自己提个醒吧~(≧▽≦)/！
