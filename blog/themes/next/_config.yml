@@ -372,7 +372,7 @@ baidu_analytics: 3434de17b2bdd62f9bc8ec42ce0cb27c
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname:
   count: true
 
@@ -440,7 +440,7 @@ gitment:
 #jiathis:
   ##uid: Get this uid from http://www.jiathis.com/
 #add_this_id:
-jiathis: true
+#jiathis: true
 # Share
 #duoshuo_share: true
 
