@@ -1,4 +1,4 @@
-﻿---
+---
 title: First Blog
 date: 2018-04-05 19:07:03
 tags:
@@ -6,7 +6,8 @@ tags:
   - 博客
 categories: 随笔
 ---
-欢迎来到我的个人博客 [一个好人](https://jingguanghui.github.io/)! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说：
+<img src="http://p6v6hsmcp.bkt.clouddn.com/alphabets-colors-creativity-954599.jpg" alt="朋友" style="width:100%" />
+<!-- more -->欢迎来到我的个人博客 [一个好人](https://jingguanghui.github.io/)! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说：
 <div class="note info"><p>万事开头难，然后中间难，然后结尾难。</p></div>
 
 嗯，就是这样，激励着我写下这第一篇博客。

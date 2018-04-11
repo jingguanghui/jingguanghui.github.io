@@ -5,11 +5,12 @@ tags:
   - 随笔
 categories: 随笔
 ---
+<img src="http://p6v6hsmcp.bkt.clouddn.com/tiger-2430625_1280.jpg" alt="朋友" style="width:100%" />
+<!-- more -->
 <div class="note primary"><p>比三观更重要的是 
  五官</p></div>
- 
-<!--more-->
 
+<!---->
 <div class="note primary"><p>你无法叫醒一个不回你消息的人
 但是红包能</p></div>
 
