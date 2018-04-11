@@ -5,6 +5,7 @@ tags:
   - friends
   - friendship
 categories: friends
+password: 3344Forever
 ---
 <img src="http://p6v6hsmcp.bkt.clouddn.com/hexo-next-optimization-title.jpg" alt="朋友" style="width:100%" />
 <!-- more -->
