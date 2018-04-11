@@ -6,6 +6,7 @@ tags:
   - PDF
   - 图库
   - Markdown
+  - 视频播放器
 categories: Tool
 ---
 <img src="http://p6v6hsmcp.bkt.clouddn.com/business-computer-connection-270640.jpg" alt="tools" style="width:100%" />
@@ -33,3 +34,9 @@ GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE
 ```
 ## 高清图库
 [10 个免费的高清图库网站，强烈推荐☞☞☞](https://zhuanlan.zhihu.com/p/23411438)
+
+## lrc歌词下载
+[lrc歌词下载](http://www.lrcgc.com/)
+
+## 视频播发器
+低内存占用、无广告、功能强大又唯美的本地播放器[PotPlayer](http://potplayer.daum.net/?lang=zh_CN)

@@ -108,12 +108,21 @@ M2_HOME即Maven的安装目录，例如D:\Maven\apache-maven-3.5.3。
 
 1. bin 该目录包含了mvn运行的脚本，这些脚本用来配置Java命令，准备好classpath和相关的Java系统属性，然后执行Java命令。
 2. boot 该目录下只有一个文件，对于一般的Maven用户，不用关心该文件
-3. conf 该目录下包含一个重要的文件setting.xml，后面会多次介绍该文件
+3. conf 该目录下包含一个重要的文件settings.xml，后面会多次介绍该文件
 4. lib 该目录包含了所有Maven运行的Java类库，用户还可以
 5. LICENSE.txt记录了Maven使用的软件许可证Apache License Version2.0
 6. NOTICE.txt记录了Maven包含的第三方软件
 7. README.txt包含了Maven的简要介绍，以及安装需求和如何安装的简要指令
 
 #### ~/.m2
-在命令行窗口中执行mvn help:system,然后可以在用户目录中（例如：C:\Users\Administrator）看到生成的.m文件夹，默认情况下，该文件夹下放置了Maven本地仓库.m2/repository。所有的Maven构件都被存储到该仓库中，以方便重用。
+在命令行窗口中执行mvn help:system（非必须）,然后可以在用户目录中（例如：C:\Users\Administrator）看到生成的.m文件夹，默认情况下，该文件夹下放置了Maven本地仓库.m2/repository。所有的Maven构件都被存储到该仓库中，以方便重用。
 ### maven安装最佳实践
+#### 设置MAVEN_OPTS环境变量
+通常设置MAVEN_OPTS的值为-Xms128m -Xmx512m,因为Java默认的最大可用内存往往不能满足Maven运行的需要,容易得到java.lang.OutofMemeoryError,所以一开始就配置是推荐的做法。
+
+关于如何设置环境变量，请参考前面设置M2_HOME环境变量的做法，尽量不要直接修改mvn.bat或者mvn这两个Maven执行脚本文件。因为如果修改了脚本文件，升级Maven时就不得不再次去修改，同理，应该尽可能地不去修改Maven安装目录下的任何文件。
+#### 配置用户范围的settings.xml
+用户可以选择配置M2_HOME/conf/settings,xml或者~/.m2/settings.xml。前者是全局范围的，整台机器上的用户都会受到该配置的影响，而后者是用户范围的，只有当前用户才会受到该配置的影响。
+
+推荐使用用户范围的settings.xml,一方面既不影响其他用户，另一方面升级之后也不用替换新升级文件夹下的settings.xml。
+#### 不要使用IDE内嵌的maven
