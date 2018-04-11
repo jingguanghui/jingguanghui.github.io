@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -140,7 +149,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -366,10 +375,10 @@
         
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-                目前共计 2 个标签
+                目前共计 11 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/博客/" style="font-size: 12px; color: #ccc">博客</a> <a href="/tags/随笔/" style="font-size: 30px; color: #111">随笔</a>
+              <a href="/tags/Java/" style="font-size: 12px; color: #ccc">Java</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/Maven/" style="font-size: 12px; color: #ccc">Maven</a> <a href="/tags/PDF/" style="font-size: 12px; color: #ccc">PDF</a> <a href="/tags/friends/" style="font-size: 12px; color: #ccc">friends</a> <a href="/tags/friendship/" style="font-size: 12px; color: #ccc">friendship</a> <a href="/tags/博客/" style="font-size: 12px; color: #ccc">博客</a> <a href="/tags/图库/" style="font-size: 12px; color: #ccc">图库</a> <a href="/tags/工具/" style="font-size: 12px; color: #ccc">工具</a> <a href="/tags/视频播放器/" style="font-size: 12px; color: #ccc">视频播放器</a> <a href="/tags/随笔/" style="font-size: 30px; color: #111">随笔</a>
             </div>
           </div>
         
@@ -431,7 +440,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -442,7 +451,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -453,7 +462,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -669,6 +678,7 @@
 		  
 	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=66 
 		 src="//music.163.com/outchain/player?type=2&id=477251491&auto=0&height=66"></iframe>  
+		 
 		 ﻿<div id="days"></div>
 </script>
 <script language="javascript">
@@ -728,7 +738,7 @@ show_date_time();
     
       <span class="post-meta-item-text">本站点总字数&#58;</span>
     
-    <span title="本站点总字数">512</span>
+    <span title="本站点总字数">3.3k</span>
   
 </div>
 
@@ -890,14 +900,6 @@ show_date_time();
 
   
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
 
   
 

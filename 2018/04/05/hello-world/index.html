@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -123,18 +132,17 @@
 
 
 
-<meta name="description" content="欢迎来到我的个人博客 一个好人! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说： 万事开头难，然后中间难，然后结尾难。  嗯，就是这样，激励着我写下这第一篇博客。">
 <meta name="keywords" content="随笔,博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="First Blog">
 <meta property="og:url" content="https://jingguanghui.github.io/2018/04/05/hello-world/index.html">
 <meta property="og:site_name" content="一个好人">
-<meta property="og:description" content="欢迎来到我的个人博客 一个好人! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说： 万事开头难，然后中间难，然后结尾难。  嗯，就是这样，激励着我写下这第一篇博客。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-08T14:11:04.716Z">
+<meta property="og:image" content="http://p6v6hsmcp.bkt.clouddn.com/alphabets-colors-creativity-954599.jpg">
+<meta property="og:updated_time" content="2018-04-11T14:53:46.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="First Blog">
-<meta name="twitter:description" content="欢迎来到我的个人博客 一个好人! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说： 万事开头难，然后中间难，然后结尾难。  嗯，就是这样，激励着我写下这第一篇博客。">
+<meta name="twitter:image" content="http://p6v6hsmcp.bkt.clouddn.com/alphabets-colors-creativity-954599.jpg">
 
 
 
@@ -144,7 +152,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -190,6 +198,8 @@
 
 
 
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -408,8 +418,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-08T22:11:04+08:00">
-                2018-04-08
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-11T22:53:46+08:00">
+                2018-04-11
               </time>
             
           </span>
@@ -439,17 +449,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/05/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/05/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -511,10 +510,30 @@
       
 
       
-        <p>欢迎来到我的个人博客 <a href="https://jingguanghui.github.io/">一个好人</a>! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说：</p>
+        <p><img src="http://p6v6hsmcp.bkt.clouddn.com/alphabets-colors-creativity-954599.jpg" alt="朋友" style="width:100%"><br><a id="more"></a><br>
+        <div id="aplayer-PXBVEBFt" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-PXBVEBFt"),
+            narrow: false,
+            autoplay: true,
+            showlrc: 3,
+            music: {
+              title: "Hello",
+              author: "Adele",
+              url: "http://p6v6hsmcp.bkt.clouddn.com/Adele%20-%20Hello.mp3",
+              pic: "http://p6v6hsmcp.bkt.clouddn.com/u=3529119121,1423376518&fm=27&gp=0.jpg",
+              lrc: "http://p6v6hsmcp.bkt.clouddn.com/Adele-Hello.lrc"
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script><br>欢迎来到我的个人博客 <a href="https://jingguanghui.github.io/">一个好人</a>! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说：</p>
 <div class="note info"><p>万事开头难，然后中间难，然后结尾难。</p></div>
 
-<p>嗯，就是这样，激励着我写下这第一篇博客。<br><a id="more"></a></p>
+<p>嗯，就是这样，激励着我写下这第一篇博客。</p>
 <h2 id="5W1H分析"><a href="#5W1H分析" class="headerlink" title="5W1H分析"></a>5W1H分析</h2><h3 id="why"><a href="#why" class="headerlink" title="why"></a>why</h3><div class="note success"><p>可能是为了装逼吧，也可能是为了记录些什么，我还分不清楚两者的区别。</p></div>
 
 <h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><div class="note success">写博客<p></p></div>
@@ -653,32 +672,6 @@
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
-
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-      
     </div>
   </div>
 
@@ -691,14 +684,7 @@ var jiathis_config={
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
     </div>
-
   
 
 
@@ -753,7 +739,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -764,7 +750,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -775,7 +761,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -991,6 +977,7 @@ var jiathis_config={
 		  
 	     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=66 
 		 src="//music.163.com/outchain/player?type=2&id=477251491&auto=0&height=66"></iframe>  
+		 
 		 ﻿<div id="days"></div>
 </script>
 <script language="javascript">
@@ -1066,7 +1053,7 @@ show_date_time();
     
       <span class="post-meta-item-text">本站点总字数&#58;</span>
     
-    <span title="本站点总字数">512</span>
+    <span title="本站点总字数">3.3k</span>
   
 </div>
 
@@ -1228,26 +1215,6 @@ show_date_time();
 
   
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://jingguanghui.github.io/2018/04/05/hello-world/';
-          this.page.identifier = '2018/04/05/hello-world/';
-          this.page.title = 'First Blog';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
 
   
 

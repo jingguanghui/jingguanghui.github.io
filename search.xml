@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[《Maven实战》学习（一）]]></title>
+    <url>%2F2018%2F04%2F11%2Fmaven_1%2F</url>
+    <content type="text"><![CDATA[Maven简介何为Maven？Maven是优秀的构建工具。 为什么要用Maven？Maven能够帮助我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。 Maven是跨平台的，这意味着无论在Windows、Linux还是Mac上都可以使用相同的命令。 Maven最大化地消除了构建的重复，抽象了构建生命周期，并且为绝大部分的构建任务提供了插件，我们不需要实现过程，甚至不再需要去实现这些过程中的一些任务。最简单的例子就是测试，我们没必要告诉Maven去测试，更不需要告诉Maven如何运行测试，只需要遵循Maven的约定编好测试用例，当我们运行构建的时候，这些测试便会自动运行。 Maven不仅是构建工具，还是一个依赖管理工具和项目信息管理工具。它提供中央仓库，能帮我们自动下载构件。 Maven的安装和配置在Windows上安装Maven检查JDK的安装Maven可以运行在JDK1.4及以上版本。 打开命令行，输入以下命令来检查JDK安装 1echo %JAVA_HOME% 1java -version Maven下载Maven下载地址,Windows下是zip文件，如apache-maven-3.5.3-bin.zip。 本地安装在指定的目录中运行以下命令将安装文件解压到当前目录（如D:\Maven）1D:\Maven&gt;jar xvf &quot;D:\Downloads\apache-maven-3.5.3-bin.zip&quot; 设置环境变量，将Maven安装配置到操作系统中： 右击“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;”环境变量”； 在系统变量中新建一个变量，变量名为“M2_HOME”,变量值为Maven的安装目录D:\Maven\apache-maven-3.5.3，单击‘确定’按钮； 在系统变量中找到Path变量，双击Path变量，在变量值末尾添加%M2_HOME%\bin;，（多个值之间用英文分号（;）隔开），单击‘确定’按钮。 值得注意的是Path环境变量。当我们在cmd中执行命令行时，Windows首先会在当前目录中寻找可执行的脚本或文件，如果没找到，Windows会接着遍历环境变量Path中定义的路径。打开一个新的命令行窗口，执行以下命令验证Maven是否安装成功1mvn -v执行以上之后命令出现类似如下结果，则说明安装成功Apache Maven 3.5.3 (3383c37e1f9e9b3bc3df5050c29c8aff9f295297; 2018-02-25T03:49:05+08:00)Maven home: D:\Maven\apache-maven-3.5.3\bin..Java version: 1.8.0_144, vendor: Oracle CorporationJava home: D:\Java\jdk1.8.0_144\jreDefault locale: zh_CN, platform encoding: GBKOS name: “windows 7”, version: “6.1”, arch: “amd64”, family: “windows” 升级Maven只需要把新下载下来的文件解压到文件目录中，然后替换掉系统变量M2_HOME的变量值即可。 在基于UNIX的系统上安装Maven检查JDK的安装打开命令行，输入以下命令来检查JDK安装 1echo %JAVA_HOME% 1java -version Maven下载Maven下载地址,UNIX下是tar.gz文件，如apache-maven-3.5.3-bin.tar.gz。 本地安装在指定的目录中运行以下命令将安装文件解压到当前目录（如D:\Maven）1D:\Maven&gt;tar-xvzf &quot;D:\Downloads\apache-maven-3.5.3-bin.tar.gz&quot; 现在已经创建好了一个Maven安装目录apache-maven-3.5.3，虽然直接使用该目录配置环境后就能使用Maven了，但这里推荐的做法是，在安装目录旁平行地创建一个符号链接，以便日后的升级：1ln-s apache-maven-3.5.3 apache-maven 1ls-l 接下来，设置M2_HOME环境变量指向符号链接apache-maven,并且把Maven安装目录下的bin/文件添加到系统环境变量PATH中1export M2_HOME=/home/juven/bin/apache-maven 1export PATH=$ PATH: $ M2-HOME/bin 运行以下命令检查Maven是否安装成功 mvn -v 安装目录分析M2_HOMEM2_HOME即Maven的安装目录，例如D:\Maven\apache-maven-3.5.3。 bin 该目录包含了mvn运行的脚本，这些脚本用来配置Java命令，准备好classpath和相关的Java系统属性，然后执行Java命令。 boot 该目录下只有一个文件，对于一般的Maven用户，不用关心该文件 conf 该目录下包含一个重要的文件settings.xml，后面会多次介绍该文件 lib 该目录包含了所有Maven运行的Java类库，用户还可以 LICENSE.txt记录了Maven使用的软件许可证Apache License Version2.0 NOTICE.txt记录了Maven包含的第三方软件 README.txt包含了Maven的简要介绍，以及安装需求和如何安装的简要指令 ~/.m2在命令行窗口中执行mvn help:system（非必须）,然后可以在用户目录中（例如：C:\Users\Administrator）看到生成的.m文件夹，默认情况下，该文件夹下放置了Maven本地仓库.m2/repository。所有的Maven构件都被存储到该仓库中，以方便重用。 maven安装最佳实践设置MAVEN_OPTS环境变量通常设置MAVEN_OPTS的值为-Xms128m -Xmx512m,因为Java默认的最大可用内存往往不能满足Maven运行的需要,容易得到java.lang.OutofMemeoryError,所以一开始就配置是推荐的做法。 关于如何设置环境变量，请参考前面设置M2_HOME环境变量的做法，尽量不要直接修改mvn.bat或者mvn这两个Maven执行脚本文件。因为如果修改了脚本文件，升级Maven时就不得不再次去修改，同理，应该尽可能地不去修改Maven安装目录下的任何文件。 配置用户范围的settings.xml用户可以选择配置M2_HOME/conf/settings,xml或者~/.m2/settings.xml。前者是全局范围的，整台机器上的用户都会受到该配置的影响，而后者是用户范围的，只有当前用户才会受到该配置的影响。 推荐使用用户范围的settings.xml,一方面既不影响其他用户，另一方面升级之后也不用替换新升级文件夹下的settings.xml。 不要使用IDE内嵌的maven]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Maven</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Tools]]></title>
+    <url>%2F2018%2F04%2F11%2Ftools%2F</url>
+    <content type="text"><![CDATA[工欲善其事，必先利其器 PDF阅读器小巧好用的PDF阅读器：SumatraPDF下载 Sumatrapdf快捷键 Markdown编辑器所写即所得：MarkdownPad下载 注册码 User： 1Soar360@live.com 授权：1GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ== 高清图库10 个免费的高清图库网站，强烈推荐☞☞☞ lrc歌词下载lrc歌词下载 视频播发器低内存占用、无广告、功能强大又唯美的本地播放器PotPlayer]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>PDF</tag>
+        <tag>图库</tag>
+        <tag>Markdown</tag>
+        <tag>视频播放器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[3344——Forever]]></title>
+    <url>%2F2018%2F04%2F09%2Ffriends%2F</url>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-GMvoYGwI"), narrow: false, autoplay: true, showlrc: 3, music: { title: "朋友", author: "龙井说唱", url: "http://p6v6hsmcp.bkt.clouddn.com/%E9%BE%99%E4%BA%95%E8%AF%B4%E5%94%B1%20-%20%E6%9C%8B%E5%8F%8B.mp3", pic: "http://p6v6hsmcp.bkt.clouddn.com/timg%20%286%29.jpg", lrc: "http://p6v6hsmcp.bkt.clouddn.com/%E9%BE%99%E4%BA%95%E8%AF%B4%E5%94%B1-%E6%9C%8B%E5%8F%8B.lrc" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 人之间的友谊，并非由于说不尽的好处，倒是说不出的要好。 ——钱钟书为什么要引用钱钟书先生说的话呢，因为我不知道该怎么开头。就算是引用了又怎么样呢，我还是不知道写什么。如果让我在写文章和吃屎之间做个选择的话，我会毫不犹豫的选择写文章(&gt;▽&lt;)。写这篇文章是为了感谢3344的兄弟姐妹们对我个人博客的支持和鼓励，也纪念3344的我们在一起九年了。在这里首先谢谢秀梅，许浩和秀才的红包，在我装逼的时候给我捧场，谢谢你们，么么哒。说实在的，这个年龄写这个有点矫情了，但谁在乎呢（道系还是佛系？）。2009年，很荣幸的把我分到了0830班，又阴差阳错的进了3344寝室 ，确认过眼神，我遇到对的人，嗯，这些都是对的人。彦武彦武，我的老大哥，我们认识已经十一年了，本来想送你一首《十一年》呢，但是我忍住了(认真脸)。接下来的五一就是你的大喜日子了，小弟在这里祝你和浏阳百年好合，早生贵子，我还等着当叔叔呢。最后，一首歌送给你们。 var ap = new APlayer({ element: document.getElementById("aplayer-keqZKQhN"), narrow: false, autoplay: false, showlrc: 3, music: { title: "给你们", author: "张宇", url: "http://p6v6hsmcp.bkt.clouddn.com/%E5%BC%A0%E5%AE%87%20-%20%E7%BB%99%E4%BD%A0%E4%BB%AC.mp3", pic: "http://p6v6hsmcp.bkt.clouddn.com/u=3963152680,1514268489&fm=27&gp=0.jpg", lrc: "http://p6v6hsmcp.bkt.clouddn.com/%E5%BC%A0%E5%AE%87-%E7%BB%99%E4%BD%A0%E4%BB%AC.lrc" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 东升东升，人生赢家，把大家的秀梅拐走了，我就不谴责你了，因为我估计还排不上队，就留给他们谴责吧，哈哈。说点正事，赶紧和秀梅把证领了，把事办了，大家还都等着喝喜酒呢。壮壮，当爹的人了，大家的表率，在幸福的道路上已经超越了我们一圈，也是我们走向人生幸福道路的领头羊。说这么多，其实是想让你传授一下经验，带领以许浩为代表的单身狗们早日走向人生巅峰。毕竟以你这模样还能娶到嫂子这么漂亮贤惠的姑娘，大概是情圣了吧。说你丑，十一长大不会打我吧。扬飞扬飞，我们的曹老师。自从你当了老师之后，让我对老师有了从新的认识，原来人还可以这么衣冠禽兽。当然了，也谢谢你带我认识了另外一位老师，苍老师，我和她已经好久没联系了，不知道你还能牵上线吗？最后，祝艳彩你俩早点办事。秀才秀才，一个假的印度人。只想告诉你，在广西那边少嫖点娼。你这人渣不如的东西，你对的起你的家人吗？你对的起你自己的良心吗？你自己想想。不是我骂你，你就知道享受她们的肉体，可是你有没有想过你的家人，你未来的女朋友，你简直就是畜生。我不想多说，只想对你说，下次再有这种事发生，请带上我，知道吗？保持联络！孙宽孙宽，我们唯一的研究生。多吃点饭，把自己养胖了，还有赶紧给我找个嫂子，不要搞基。许浩许浩，哥哥。人到中年不得已，保温杯里泡枸杞。多锻炼身体，看你虚的，这几天是不是又病了，还记得你曾经是多么的猛男吗？最近，看你在微信运动里，一天天的占领我的朋友圈，感到压力的同时，也感觉那个猛男要回来了。加油吧哥哥，早日给我找个嫂子。胡胡，同样的人生赢家，曾经那个带我打英雄联盟的小胖子（并不是个子低，只是胖的不明显），现在也已经结婚了，走在了人生幸福的道路上。最后，祝督京老师你俩早生贵子。秀梅秀梅，我们的大妹妹。为什么你和东升在一块了还要单列出来呢，可能是我受了贿赂吧。赶紧和东升把事办了，看好你们哦。小明小明，我们的小妹妹，一个开了挂的人。赶紧给我们找个妹夫，单身这么多年，你不着急，我们还着急呢。不要怕他欺负你，毕竟你哥哥那么多不是。在一块的就不单独列出来了，在这里再一次祝你们百年好合（当然也包括东升和秀梅哈）。]]></content>
+      <categories>
+        <category>friends</category>
+      </categories>
+      <tags>
+        <tag>friends</tag>
+        <tag>friendship</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[这一碗好喝的鸡汤]]></title>
     <url>%2F2018%2F04%2F06%2Fchicken-soup%2F</url>
     <content type="text"><![CDATA[比三观更重要的是 五官 你无法叫醒一个不回你消息的人但是红包能 不要看别人表面上一帆风顺实际上他们背地里也一帆风顺 有的时候哭也是可以解决问题的只要你长得足够漂亮 你全力做到最好还不如别人随便搞搞 生活不止眼前的苟且还有前任发来的请帖 我妈常跟我说找对象的时候不要光看别人的外表也要看看自己的外表 如果可以的话请好好爱自己因为这个世界上没人会爱你 有的时候你不努力一下还真的不知道什么是绝望 所有的事情都会慢慢慢慢慢慢慢慢慢慢慢慢慢慢慢慢好起来的 我真的不懂为什么我那么穷还能吃那么胖 你们之所以喝鸡汤是因为肉被别人吃了 努力不一定会成功但是不努力一定会很轻松 有人出现在你的生命里就是为了告诉你你真好骗 你以为有钱人他就很快乐吗他们的快乐你都想象不到 喜欢一个人就去表白万一成备胎了呢]]></content>
@@ -14,7 +53,7 @@
   <entry>
     <title><![CDATA[First Blog]]></title>
     <url>%2F2018%2F04%2F05%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[欢迎来到我的个人博客 一个好人! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说： 万事开头难，然后中间难，然后结尾难。 嗯，就是这样，激励着我写下这第一篇博客。 5W1H分析why可能是为了装逼吧，也可能是为了记录些什么，我还分不清楚两者的区别。 what写博客 where家里or公司 when空闲的时候 who当然是我了，难道是别人不成 how用电脑写吧，这个好像还挺难的（认真脸） 最后分享一篇最近在知乎上看到的一篇文章，人是怎么废掉的？算是给自己提个醒吧~(≧▽≦)/！]]></content>
+    <content type="text"><![CDATA[var ap = new APlayer({ element: document.getElementById("aplayer-PXBVEBFt"), narrow: false, autoplay: true, showlrc: 3, music: { title: "Hello", author: "Adele", url: "http://p6v6hsmcp.bkt.clouddn.com/Adele%20-%20Hello.mp3", pic: "http://p6v6hsmcp.bkt.clouddn.com/u=3529119121,1423376518&fm=27&gp=0.jpg", lrc: "http://p6v6hsmcp.bkt.clouddn.com/Adele-Hello.lrc" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 欢迎来到我的个人博客 一个好人! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说： 万事开头难，然后中间难，然后结尾难。 嗯，就是这样，激励着我写下这第一篇博客。 5W1H分析why可能是为了装逼吧，也可能是为了记录些什么，我还分不清楚两者的区别。 what写博客 where家里or公司 when空闲的时候 who当然是我了，难道是别人不成 how用电脑写吧，这个好像还挺难的（认真脸） 最后分享一篇最近在知乎上看到的一篇文章，人是怎么废掉的？算是给自己提个醒吧~(≧▽≦)/！]]></content>
       <categories>
         <category>随笔</category>
       </categories>
