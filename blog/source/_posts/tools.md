@@ -15,7 +15,7 @@ categories: Tool
 ## PDF阅读器
 小巧好用的PDF阅读器：[SumatraPDF下载](https://www.sumatrapdfreader.org/download-free-pdf-viewer.html)
 
-[Sumatrapdf快捷键](https://www.cnblogs.com/tsingke/p/6436017.html)
+[SumatraPDF快捷键](https://www.cnblogs.com/tsingke/p/6436017.html)
 
 ## Markdown编辑器
 所写即所得：[MarkdownPad下载](http://markdownpad.com/download.html)

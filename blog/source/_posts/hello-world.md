@@ -6,7 +6,7 @@ tags:
   - 博客
 categories: 随笔
 ---
-<img src="http://p6v6hsmcp.bkt.clouddn.com/alphabets-colors-creativity-954599.jpg" alt="朋友" style="width:100%" />
+<img src="http://p6v6hsmcp.bkt.clouddn.com/alphabets-colors-creativity-954599.jpg" alt="Hello" style="width:100%" />
 <!-- more -->
 {% aplayer "Hello" "Adele" "http://p6v6hsmcp.bkt.clouddn.com/Adele%20-%20Hello.mp3" "http://p6v6hsmcp.bkt.clouddn.com/u=3529119121,1423376518&fm=27&gp=0.jpg" "autoplay" "lrc:http://p6v6hsmcp.bkt.clouddn.com/Adele-Hello.lrc" %}
 欢迎来到我的个人博客 [一个好人](https://jingguanghui.github.io/)! 这是我的第一篇博客，说实话我不知道写些什么，但俗话说：

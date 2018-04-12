@@ -125,4 +125,7 @@ M2_HOME即Maven的安装目录，例如D:\Maven\apache-maven-3.5.3。
 用户可以选择配置M2_HOME/conf/settings,xml或者~/.m2/settings.xml。前者是全局范围的，整台机器上的用户都会受到该配置的影响，而后者是用户范围的，只有当前用户才会受到该配置的影响。
 
 推荐使用用户范围的settings.xml,一方面既不影响其他用户，另一方面升级之后也不用替换新升级文件夹下的settings.xml。
-#### 不要使用IDE内嵌的maven
+#### 不要使用IDE内嵌的Maven
+一般情况下，IDE内嵌的Maven通常都比较新，但不一定很稳定，而且往往和命令行使用的Maven不是同一个版本。这里又出现两个潜在的问题：首先，较新版本的Maven存在很多不稳定因素，容易造成一些难以理解的问题；其次，除了IDE，还经常会使用命令行的Maven,如果版本不一致，则容易造成构件行为的不一致。所以，应该在IDE中配置Maven插件，使用与命令行一致的Maven。
+
+在MyEclipse中，单击菜单栏中的Window,选择Preferences,在左边菜单栏中，单击MyEclipse,然后单击Maven4MyEclipse,选择Installation子项，在右边的画板中，能够看到有一个默认的Embedded Maven安装被选中了。单击Add...按钮，然后选择Maven安装目录M2_HOME，添加完毕之后勾选这一外部的Maven
