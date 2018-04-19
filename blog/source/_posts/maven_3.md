@@ -6,7 +6,7 @@ tags:
   - Java
 categories: Java
 ---
-<img src="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg" alt="tools" style="width:100%" />
+<img src="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg" alt="maven" style="width:100%" />
 <!-- more -->
 ## 背景案例
 接下里的Maven学习，将引入一个真实的案例来进行学习，该案例的目的还是帮助我们理解Maven的概念， 以及展示大部分Maven项目需要面对和处理的一些问题。
@@ -90,5 +90,4 @@ Maven的世界中拥有数量非常巨大的构件，也就是平时用的一些
 ### account-email
 回想在上面提到的背景案例，案例中有一个email模块负责发送账户激活的电子邮件，本节就详细阐述该模块的实现，包括POM配置、主代码和测试代码。由于该背景案例的实现是基于Spring Framework, 因此还会涉及相关的 Spring配置。
 #### account-email的POM
-该模块的POM代码如下所示
-```
+<div class="note warning"><p>···未完待续···</p></div>

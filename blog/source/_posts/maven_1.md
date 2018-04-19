@@ -6,7 +6,7 @@ tags:
   - Java
 categories: Java
 ---
-<img src="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg" alt="tools" style="width:100%" />
+<img src="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg" alt="maven" style="width:100%" />
 <!-- more -->
 ## Maven简介
 ### 何为Maven？
