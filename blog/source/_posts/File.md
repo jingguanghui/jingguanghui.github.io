@@ -176,3 +176,140 @@ public static void uf_DelFile(String as_Path) throws Exception{
 }
 ```
 ## 修改
+### 复制文件
+```java
+/**
+ * 复制文件
+ * @param as_SourFile 源文件路径
+ * @param as_DestFile 目标文件路径
+ * @param isOvercast 如果目标文件存在是否覆盖
+ * @throws Exception 方法异常
+ */
+public static File uf_CopyFile(String as_SourFile,String as_DestFile,boolean isOvercast) throws Exception{
+	File sourFile=new File(as_SourFile);
+	if(!sourFile.exists()){
+		throw new Exception("复制文件" +as_SourFile + "失败，源文件不存在！");
+	}
+	if(!sourFile.isFile()){
+		throw new Exception("复制文件" +as_SourFile + "失败，源文件不是文件！");
+	}
+	File destFile=new File(as_DestFile);
+	if(destFile.exists()){
+		if(!destFile.isFile()){
+			throw new Exception("复制文件" +as_SourFile + "失败，目标路径"+as_DestFile+"存在,但不是文件！");
+		}
+		if(!isOvercast){
+			return destFile;
+		}
+	}
+	FileInputStream fileInputStream=null;
+	FileOutputStream fileOutputStream=null;
+	try {
+		fileInputStream=new FileInputStream(sourFile);
+		fileOutputStream=new FileOutputStream(destFile);
+		byte[] buf=new byte[1024];
+		int len=0;
+		while((len=fileInputStream.read(buf))!=-1){
+			fileOutputStream.write(buf, 0, len);
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+		throw new Exception(e);
+	}finally{
+		if(fileInputStream!=null){
+			fileInputStream.close();
+		}
+		if(fileOutputStream!=null){
+			fileOutputStream.close();
+		}
+	}
+	
+	return destFile;
+}
+```
+### 复制文件夹
+```java
+/**
+ * 目录复制(含子目录)
+ * @param as_sPath 源路径       
+ * @param as_dPath 目标路径
+ * @param ab_IsIncludeRoot 是否包含源路径本身
+ * @throws Exception 方法异常
+ */
+public static void uf_CopyTree(String as_sPath, String as_dPath, boolean ab_IsIncludeRoot) throws Exception
+{
+    File lo_sFile = new File(as_sPath);
+    if (!lo_sFile.exists())
+        throw new Exception("源路径并不存在。");
+    if (!lo_sFile.isDirectory())
+        throw new Exception("源路径并非目录。");
+    File lo_dFile = new File(as_dPath);
+    if (!lo_dFile.exists()){
+    	lo_dFile.mkdirs();
+    }
+    if (!lo_dFile.isDirectory())
+        throw new Exception("目标路径并非目录。");
+    File lo_NewFile, lo_File;
+    String ls_Name;
+    if (ab_IsIncludeRoot)
+    {
+        ls_Name = lo_sFile.getName();
+        lo_NewFile = new File(as_dPath +File.separator + ls_Name);
+        if (!lo_NewFile.exists())
+        {
+            lo_NewFile.mkdir();
+        }
+        else
+        {
+            if (!lo_NewFile.isDirectory())
+                throw new Exception("目标路径存在但并非目录。");
+        }
+        FileHelper.uf_CopyTree(as_sPath, as_dPath + File.separator  + ls_Name, false);
+    }
+    else
+    {
+        File[] lo_Files = lo_sFile.listFiles();
+        for (int ii = 0; ii < lo_Files.length; ii++)
+        {
+            lo_File = lo_Files[ii];
+            ls_Name = lo_File.getName();
+            if (lo_File.isDirectory())
+            {
+                lo_NewFile = new File(as_dPath + File.separator  + ls_Name);
+                if (!lo_NewFile.exists())
+                {
+                    lo_NewFile.mkdir();
+                }
+                else
+                {
+                    if (!lo_NewFile.isDirectory())
+                        throw new Exception("目标路径存在但并非目录。");
+                }
+                FileHelper.uf_CopyTree(as_sPath + File.separator  + ls_Name, as_dPath + File.separator  + ls_Name, false);
+            }
+            else
+            {
+                FileHelper.uf_CopyFile(as_sPath + File.separator  + ls_Name, as_dPath + File.separator  + ls_Name, true);
+            }
+        }
+    }
+}
+```
+### 移动文件
+```java
+/**
+ * 移动文件
+ * @param as_sFile 源文件路径
+ * @param as_dFile 目标文件路径
+ * @param ab_IsOvercast 目标文件存在是否覆盖
+ * @return 移动后的File对象
+ * @throws Exception 方法异常
+ */
+public static File uf_MoveFile(String as_sFile, String as_dFile, boolean ab_IsOvercast) throws Exception
+{
+    File lo_sFile = new File(as_sFile);
+    File lo_dFile = FileHelper.uf_CopyFile(as_sFile, as_dFile, ab_IsOvercast);
+    lo_sFile.delete();
+    return lo_dFile;
+}
+```
