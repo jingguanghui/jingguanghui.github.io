@@ -227,7 +227,7 @@ public static File uf_CopyFile(String as_SourFile,String as_DestFile,boolean isO
 	return destFile;
 }
 ```
-### 复制文件夹
+### 复制目录
 ```java
 /**
  * 目录复制(含子目录)
