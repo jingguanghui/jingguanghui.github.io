@@ -313,3 +313,80 @@ public static File uf_MoveFile(String as_sFile, String as_dFile, boolean ab_IsOv
     return lo_dFile;
 }
 ```
+## 查看
+首先，再普及一下File类中的list()和listFiles()方法的区别：
+
+* list()方法是返回某个目录下的所有文件和目录的文件名，返回的是String数组
+
+* listFiles()方法是返回某个目录下所有文件和目录的绝对路径，返回的是File数组
+
+```java list()
+public static void main(String[] args) throws Exception {
+	    File file=new File("E:/thinkingInJava/Think in Java 4 code/object");
+	    String[] fileNames=file.list();
+	    for(String fileName:fileNames){
+	    	System.out.println(fileName);
+	    }
+	}
+```
+结果如下：
+```
+build.xml
+Documentation1.java
+Documentation2.java
+Documentation3.java
+HelloDate.java
+HelloDate1.java
+ShowProperties.java
+```
+```java listFiles()
+public static void main(String[] args) throws Exception {
+	    File file=new File("E:/thinkingInJava/Think in Java 4 code/object");
+	    File[] fileNames=file.listFiles();
+	    for(File fileName:fileNames){
+	    	System.out.println(fileName);
+	    }
+	}
+```
+结果如下：
+```
+E:\thinkingInJava\Think in Java 4 code\object\build.xml
+E:\thinkingInJava\Think in Java 4 code\object\Documentation1.java
+E:\thinkingInJava\Think in Java 4 code\object\Documentation2.java
+E:\thinkingInJava\Think in Java 4 code\object\Documentation3.java
+E:\thinkingInJava\Think in Java 4 code\object\HelloDate.java
+E:\thinkingInJava\Think in Java 4 code\object\HelloDate1.java
+E:\thinkingInJava\Think in Java 4 code\object\ShowProperties.java
+```
+### 目录列表器
+对符合条件的文件进行筛选
+```java
+/**
+     * 筛选符合条件的文件
+     * @param as_sFile 目录文件
+     * @param reg 要筛选的文件正则表达式
+     * @return 符合条件的文件集合
+     * @throws Exception
+     */
+    public static String[] uf_ListFile(String as_sFile,final String reg)throws Exception{
+    	    File path = new File(as_sFile);
+    	    if (!path.exists())
+                throw new Exception("源路径并不存在。");
+            if (!path.isDirectory())
+                throw new Exception("源路径并非目录。");
+    	    String[] list;
+    	    if(reg==null||"".equals(reg))
+    	      list = path.list();
+    	    else
+    	    	//匿名内部类
+    	      list = path.list(new FilenameFilter() {
+    	        private Pattern pattern = Pattern.compile(reg);
+    	        public boolean accept(File dir, String name) {
+    	          return pattern.matcher(name).matches();
+    	        }
+    	      });
+    	    //按字母顺序排序
+    	    Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
+    	  return list;
+}
+```
