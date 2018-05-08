@@ -362,31 +362,31 @@ E:\thinkingInJava\Think in Java 4 code\object\ShowProperties.java
 对符合条件的文件进行筛选
 ```java
 /**
-     * 筛选符合条件的文件
-     * @param as_sFile 目录文件
-     * @param reg 要筛选的文件正则表达式
-     * @return 符合条件的文件集合
-     * @throws Exception
-     */
-    public static String[] uf_ListFile(String as_sFile,final String reg)throws Exception{
-    	    File path = new File(as_sFile);
-    	    if (!path.exists())
-                throw new Exception("源路径并不存在。");
-            if (!path.isDirectory())
-                throw new Exception("源路径并非目录。");
-    	    String[] list;
-    	    if(reg==null||"".equals(reg))
-    	      list = path.list();
-    	    else
-    	    	//匿名内部类
-    	      list = path.list(new FilenameFilter() {
-    	        private Pattern pattern = Pattern.compile(reg);
-    	        public boolean accept(File dir, String name) {
-    	          return pattern.matcher(name).matches();
-    	        }
-    	      });
-    	    //按字母顺序排序
-    	    Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
-    	  return list;
+ * 筛选符合条件的文件
+ * @param as_sFile 目录文件
+ * @param reg 要筛选的文件正则表达式
+ * @return 符合条件的文件集合
+ * @throws Exception
+ */
+public static String[] uf_ListFile(String as_sFile,final String reg)throws Exception{
+	    File path = new File(as_sFile);
+	    if (!path.exists())
+            throw new Exception("源路径并不存在。");
+        if (!path.isDirectory())
+            throw new Exception("源路径并非目录。");
+	    String[] list;
+	    if(reg==null||"".equals(reg))
+	      list = path.list();
+	    else
+	    	//匿名内部类
+	      list = path.list(new FilenameFilter() {
+	        private Pattern pattern = Pattern.compile(reg);
+	        public boolean accept(File dir, String name) {
+	          return pattern.matcher(name).matches();
+	        }
+	      });
+	    //按字母顺序排序
+	    Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
+	  return list;
 }
 ```
