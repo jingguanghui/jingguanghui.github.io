@@ -119,7 +119,7 @@
 
 
 
-  <meta name="keywords" content="Maven,Java," />
+  <meta name="keywords" content="Java,Maven," />
 
 
 
@@ -132,14 +132,14 @@
 
 
 
-<meta name="keywords" content="Maven,Java">
+<meta name="keywords" content="Java,Maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Maven实战》学习（一）">
 <meta property="og:url" content="https://jingguanghui.github.io/2018/04/11/maven_1/index.html">
 <meta property="og:site_name" content="一个好人">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg">
-<meta property="og:updated_time" content="2018-04-11T14:27:27.093Z">
+<meta property="og:updated_time" content="2018-04-22T04:24:00.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Maven实战》学习（一）">
 <meta name="twitter:image" content="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg">
@@ -416,8 +416,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-11T22:27:27+08:00">
-                2018-04-11
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-22T12:24:00+08:00">
+                2018-04-22
               </time>
             
           </span>
@@ -471,7 +471,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,552
+                  1,811
                 </span>
               
 
@@ -487,7 +487,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -508,8 +508,8 @@
       
 
       
-        <p><img src="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg" alt="tools" style="width:100%"><br><a id="more"></a></p>
-<h2 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h2><h3 id="何为Maven？"><a href="#何为Maven？" class="headerlink" title="何为Maven？"></a>何为Maven？</h3><p>Maven是优秀的构建工具。</p>
+        <p><img src="http://p6v6hsmcp.bkt.clouddn.com/1184808_e345.jpg" alt="maven" style="width:100%"><br><a id="more"></a></p>
+<h2 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h2><h3 id="何为Maven？"><a href="#何为Maven？" class="headerlink" title="何为Maven？"></a>何为Maven？</h3><p>Maven项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。</p>
 <h3 id="为什么要用Maven？"><a href="#为什么要用Maven？" class="headerlink" title="为什么要用Maven？"></a>为什么要用Maven？</h3><p>Maven能够帮助我们自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署。</p>
 <p>Maven是跨平台的，这意味着无论在Windows、Linux还是Mac上都可以使用相同的命令。</p>
 <p>Maven最大化地消除了构建的重复，抽象了构建生命周期，并且为绝大部分的构建任务提供了插件，我们不需要实现过程，甚至不再需要去实现这些过程中的一些任务。最简单的例子就是测试，我们没必要告诉Maven去测试，更不需要告诉Maven如何运行测试，只需要遵循Maven的约定编好测试用例，当我们运行构建的时候，这些测试便会自动运行。</p>
@@ -555,7 +555,9 @@
 <p>关于如何设置环境变量，请参考前面设置M2_HOME环境变量的做法，尽量不要直接修改mvn.bat或者mvn这两个Maven执行脚本文件。因为如果修改了脚本文件，升级Maven时就不得不再次去修改，同理，应该尽可能地不去修改Maven安装目录下的任何文件。</p>
 <h4 id="配置用户范围的settings-xml"><a href="#配置用户范围的settings-xml" class="headerlink" title="配置用户范围的settings.xml"></a>配置用户范围的settings.xml</h4><p>用户可以选择配置M2_HOME/conf/settings,xml或者~/.m2/settings.xml。前者是全局范围的，整台机器上的用户都会受到该配置的影响，而后者是用户范围的，只有当前用户才会受到该配置的影响。</p>
 <p>推荐使用用户范围的settings.xml,一方面既不影响其他用户，另一方面升级之后也不用替换新升级文件夹下的settings.xml。</p>
-<h4 id="不要使用IDE内嵌的maven"><a href="#不要使用IDE内嵌的maven" class="headerlink" title="不要使用IDE内嵌的maven"></a>不要使用IDE内嵌的maven</h4>
+<h4 id="不要使用IDE内嵌的Maven"><a href="#不要使用IDE内嵌的Maven" class="headerlink" title="不要使用IDE内嵌的Maven"></a>不要使用IDE内嵌的Maven</h4><p>一般情况下，IDE内嵌的Maven通常都比较新，但不一定很稳定，而且往往和命令行使用的Maven不是同一个版本。这里又出现两个潜在的问题：首先，较新版本的Maven存在很多不稳定因素，容易造成一些难以理解的问题；其次，除了IDE，还经常会使用命令行的Maven,如果版本不一致，则容易造成构件行为的不一致。所以，应该在IDE中配置Maven插件，使用与命令行一致的Maven。</p>
+<p>在MyEclipse中，单击菜单栏中的Window,选择Preferences,在左边菜单栏中，单击MyEclipse,然后单击Maven4MyEclipse,选择Installation子项，在右边的画板中，能够看到有一个默认的Embedded Maven安装被选中了。单击Add…按钮，然后选择Maven安装目录M2_HOME，添加完毕之后勾选这一外部的Maven</p>
+
       
     </div>
     
@@ -638,9 +640,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Maven/" rel="tag"><i class="fa fa-tag"></i> Maven</a>
-          
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Maven/" rel="tag"><i class="fa fa-tag"></i> Maven</a>
           
         </div>
       
@@ -662,6 +664,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/12/maven_2/" rel="prev" title="《Maven实战》学习（二）">
+                《Maven实战》学习（二） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -747,7 +753,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -758,7 +764,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -769,7 +775,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1027,7 +1033,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven简介"><span class="nav-number">1.</span> <span class="nav-text">Maven简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为Maven？"><span class="nav-number">1.1.</span> <span class="nav-text">何为Maven？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用Maven？"><span class="nav-number">1.2.</span> <span class="nav-text">为什么要用Maven？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的安装和配置"><span class="nav-number">2.</span> <span class="nav-text">Maven的安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Windows上安装Maven"><span class="nav-number">2.1.</span> <span class="nav-text">在Windows上安装Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查JDK的安装"><span class="nav-number">2.1.1.</span> <span class="nav-text">检查JDK的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven下载"><span class="nav-number">2.1.2.</span> <span class="nav-text">Maven下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地安装"><span class="nav-number">2.1.3.</span> <span class="nav-text">本地安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#升级Maven"><span class="nav-number">2.1.4.</span> <span class="nav-text">升级Maven</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在基于UNIX的系统上安装Maven"><span class="nav-number">2.2.</span> <span class="nav-text">在基于UNIX的系统上安装Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查JDK的安装-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">检查JDK的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven下载-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Maven下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地安装-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">本地安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装目录分析"><span class="nav-number">2.3.</span> <span class="nav-text">安装目录分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#M2-HOME"><span class="nav-number">2.3.1.</span> <span class="nav-text">M2_HOME</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m2"><span class="nav-number">2.3.2.</span> <span class="nav-text">~/.m2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven安装最佳实践"><span class="nav-number">2.4.</span> <span class="nav-text">maven安装最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置MAVEN-OPTS环境变量"><span class="nav-number">2.4.1.</span> <span class="nav-text">设置MAVEN_OPTS环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置用户范围的settings-xml"><span class="nav-number">2.4.2.</span> <span class="nav-text">配置用户范围的settings.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要使用IDE内嵌的maven"><span class="nav-number">2.4.3.</span> <span class="nav-text">不要使用IDE内嵌的maven</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven简介"><span class="nav-number">1.</span> <span class="nav-text">Maven简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为Maven？"><span class="nav-number">1.1.</span> <span class="nav-text">何为Maven？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用Maven？"><span class="nav-number">1.2.</span> <span class="nav-text">为什么要用Maven？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的安装和配置"><span class="nav-number">2.</span> <span class="nav-text">Maven的安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Windows上安装Maven"><span class="nav-number">2.1.</span> <span class="nav-text">在Windows上安装Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查JDK的安装"><span class="nav-number">2.1.1.</span> <span class="nav-text">检查JDK的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven下载"><span class="nav-number">2.1.2.</span> <span class="nav-text">Maven下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地安装"><span class="nav-number">2.1.3.</span> <span class="nav-text">本地安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#升级Maven"><span class="nav-number">2.1.4.</span> <span class="nav-text">升级Maven</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在基于UNIX的系统上安装Maven"><span class="nav-number">2.2.</span> <span class="nav-text">在基于UNIX的系统上安装Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查JDK的安装-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">检查JDK的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven下载-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Maven下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地安装-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">本地安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装目录分析"><span class="nav-number">2.3.</span> <span class="nav-text">安装目录分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#M2-HOME"><span class="nav-number">2.3.1.</span> <span class="nav-text">M2_HOME</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m2"><span class="nav-number">2.3.2.</span> <span class="nav-text">~/.m2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven安装最佳实践"><span class="nav-number">2.4.</span> <span class="nav-text">maven安装最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置MAVEN-OPTS环境变量"><span class="nav-number">2.4.1.</span> <span class="nav-text">设置MAVEN_OPTS环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置用户范围的settings-xml"><span class="nav-number">2.4.2.</span> <span class="nav-text">配置用户范围的settings.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要使用IDE内嵌的Maven"><span class="nav-number">2.4.3.</span> <span class="nav-text">不要使用IDE内嵌的Maven</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1061,7 +1067,7 @@ show_date_time();
     
       <span class="post-meta-item-text">本站点总字数&#58;</span>
     
-    <span title="本站点总字数">3.3k</span>
+    <span title="本站点总字数">11.9k</span>
   
 </div>
 
@@ -1607,7 +1613,8 @@ show_date_time();
 
   
 
-</body>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/love.js"></script>
 </html>
