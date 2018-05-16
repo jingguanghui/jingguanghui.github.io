@@ -40,3 +40,19 @@ GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE
 
 ## 视频播发器
 低内存占用、无广告、功能强大又唯美的本地播放器[PotPlayer](http://potplayer.daum.net/?lang=zh_CN)
+
+## 技术书单
+[如果有人让你推荐编程技术书，请叫他看这个列表](http://blog.jobbole.com/106093/)
+
+## 脚本工具
+[老司机开车脚本](https://sleazyfork.org/zh-CN)
+
+[一些实用的脚本](https://greasyfork.org/zh-CN)
+
+## 网站导航
+[龙轩导航](http://ilxdh.com/)
+
+[一个框，全能搜](http://so.byr.wiki/)
+
+## 浏览器插件
+[音乐](http://listen1.github.io/listen1/)
