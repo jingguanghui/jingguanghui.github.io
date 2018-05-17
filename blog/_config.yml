@@ -92,3 +92,7 @@ search:
  
 aplayer:
   meting: true
+live2d:
+  model: wanko
+  bottom: 
+  mobileShow: false 

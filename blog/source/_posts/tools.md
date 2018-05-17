@@ -56,3 +56,9 @@ GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE
 
 ## 浏览器插件
 [音乐](http://listen1.github.io/listen1/)
+## SecureCRT
+SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。
+
+[SecureCRT下载](https://pan.baidu.com/s/1w8WroTIynquAwYBTEfnLpw)
+
+提取密码：02mc
